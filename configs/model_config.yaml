@@ -1,0 +1,7 @@
+audio_encoder:
+  hidden_dim: 512
+  input_dim: 80
+  num_layers: 3
+face_encoder:
+  backbone: resnet50
+  pretrained: true

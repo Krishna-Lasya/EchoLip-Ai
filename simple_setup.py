@@ -11,7 +11,12 @@ import yaml
 def safe_write_file(filepath, content):
     """Write content to file, creating directories if needed"""
     try:
-        os.makedirs(os.path.dirname(filepath), exist_ok=True)
+        # Ensure directory exists
+        directory = os.path.dirname(filepath)
+        if directory and not os.path.exists(directory):
+            os.makedirs(directory, exist_ok=True)
+        
+        # Write file
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(content)
         print(f"✅ Created: {filepath}")
@@ -172,7 +177,7 @@ class Config:
         pass
 ''',
         
-        'main.py': '''#!/usr/bin/env python3
+        './main.py': '''#!/usr/bin/env python3
 """EchoLip-Ai: Real-time Audio-Visual Lip Synchronization"""
 
 import argparse
@@ -272,7 +277,7 @@ def create_essential_files():
     print("\n📄 Creating essential files...")
     
     files = {
-        'README.md': '''# EchoLip-Ai 🎬🔊
+        './README.md': '''# EchoLip-Ai 🎬🔊
 
 Real-time Audio-Visual Lip Synchronization using Deep Learning
 
@@ -310,7 +315,7 @@ EchoLip-Ai/
 ```
 ''',
         
-        'requirements.txt': '''# Core ML libraries
+        './requirements.txt': '''# Core ML libraries
 torch>=1.9.0
 torchvision>=0.10.0
 torchaudio>=0.9.0
@@ -332,7 +337,7 @@ pyyaml>=5.4.0
 tqdm>=4.62.0
 ''',
         
-        '.gitignore': '''# Python
+        './.gitignore': '''# Python
 __pycache__/
 *.py[cod]
 *.so

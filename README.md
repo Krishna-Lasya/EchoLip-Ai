@@ -56,9 +56,9 @@ EchoLip-Ai/
 │   └── utils/      # Utility functions
 ├── configs/        # Configuration files
 ├── notebooks/      # Jupyter notebooks
-├── checkpoints/    # Model checkpoints (not in git)
-├── logs/           # Training logs (not in git)
-└── results/        # Results and outputs (not in git)
+├── checkpoints/    # Model checkpoints
+├── logs/           # Training logs
+└── results/        # Results and outputs
 ```
 
 ## Model Architecture
@@ -77,10 +77,8 @@ We evaluate our system using:
 - **Temporal Consistency**: Frame-to-frame smoothness
 
 ## Team
-- **Krishna Lasya**: Project Lead
-- **Team Members**: [Add team members here]
+- **Team Members**: Krishna Lasya, [Add other team members here]
 
 ## Notes
 - This is an internal development repository
 - Access is restricted to authorized team members only
-- The `checkpoints/`, `logs/`, and `results/` directories are not included in the repository

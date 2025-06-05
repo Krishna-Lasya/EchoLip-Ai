@@ -1,6 +1,7 @@
 # Python
 __pycache__/
 *.py[cod]
+*$py.class
 *.so
 
 # Data files
@@ -12,6 +13,26 @@ checkpoints/
 !checkpoints/.gitkeep
 *.pth
 *.pkl
+*.ckpt
+*.h5
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
 # Logs
 logs/
@@ -24,7 +45,33 @@ results/
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.python-version
+
+# Jupyter Notebook
+.ipynb_checkpoints
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Project specific
+outputs/videos/
+outputs/images/
+outputs/logs/
+
+# Large files
+*.mp4
+*.avi
+*.wav
+*.mp3

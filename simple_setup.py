@@ -1,31 +1,17 @@
 #!/usr/bin/env python3
 """
 Simple EchoLip-Ai Project Setup Script
-Error-free version with proper error handling
+Creates the complete project structure in one script
 """
 
 import os
-import yaml
 import sys
-
-def safe_makedirs(path):
-    """Safely create directories with error handling"""
-    try:
-        os.makedirs(path, exist_ok=True)
-        print(f"✅ Created: {path}")
-        return True
-    except Exception as e:
-        print(f"❌ Failed to create {path}: {e}")
-        return False
+import yaml
 
 def safe_write_file(filepath, content):
-    """Safely write file with error handling"""
+    """Write content to file, creating directories if needed"""
     try:
-        # Create directory if it doesn't exist
-        dir_path = os.path.dirname(filepath)
-        if dir_path:
-            os.makedirs(dir_path, exist_ok=True)
-        
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(content)
         print(f"✅ Created: {filepath}")
@@ -35,12 +21,13 @@ def safe_write_file(filepath, content):
         return False
 
 def create_directories():
-    """Create all project directories"""
+    """Create project directory structure"""
     print("\n📁 Creating directories...")
     
     directories = [
+        # Data directories
         'data/raw/videos',
-        'data/raw/audio', 
+        'data/raw/audio',
         'data/processed/frames',
         'data/processed/faces',
         'data/processed/audio_features',
@@ -48,17 +35,21 @@ def create_directories():
         'data/datasets/train',
         'data/datasets/val',
         'data/datasets/test',
+        
+        # Source code directories
         'src/preprocessing',
-        'src/models', 
+        'src/models',
         'src/training',
         'src/inference',
         'src/evaluation',
         'src/utils',
+        
+        # Other directories
         'configs',
         'notebooks',
         'checkpoints',
         'logs/training',
-        'logs/evaluation', 
+        'logs/evaluation',
         'logs/inference',
         'results/training',
         'results/evaluation',
@@ -69,8 +60,12 @@ def create_directories():
     
     success_count = 0
     for directory in directories:
-        if safe_makedirs(directory):
+        try:
+            os.makedirs(directory, exist_ok=True)
+            print(f"✅ Created: {directory}")
             success_count += 1
+        except Exception as e:
+            print(f"❌ Failed to create {directory}: {e}")
     
     print(f"\n✅ Created {success_count}/{len(directories)} directories")
     return success_count == len(directories)

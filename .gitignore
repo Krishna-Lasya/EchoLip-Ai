@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Data files
+data/
+!data/.gitkeep
+
+# Model files
+checkpoints/
+!checkpoints/.gitkeep
+*.pth
+*.pkl
+
+# Logs
+logs/
+!logs/.gitkeep
+
+# Results
+results/
+!results/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

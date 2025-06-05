@@ -1,30 +1,30 @@
-# EchoLip-Ai 🎬🔊
+# EchoLip-Ai
 
-Real-time Audio-Visual Lip Synchronization using Deep Learning
+Audio-Visual Lip Synchronization Project (Internal Development)
 
-## 🚀 Features
-- Real-time lip synchronization
-- High-quality face preservation
-- Audio-visual alignment
-- Easy-to-use API
+## Project Overview
+EchoLip-Ai is an experimental deep learning system for synchronizing audio with facial movements. This repository contains the development codebase for our research team.
 
-## 🛠️ Installation
+## Setup
 ```bash
+# Clone repository (requires access permission)
 git clone https://github.com/Krishna-Lasya/EchoLip-Ai.git
 cd EchoLip-Ai
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-## 🎯 Quick Start
+## Usage
 ```bash
-# Training
+# Training mode
 python main.py --mode train --config configs/train_config.yaml
 
-# Inference
+# Inference mode
 python main.py --mode inference --config configs/inference_config.yaml
 ```
 
-## 📁 Project Structure
+## Project Structure
 ```
 EchoLip-Ai/
 ├── data/           # Data storage
@@ -43,8 +43,7 @@ EchoLip-Ai/
 └── results/        # Results and outputs (not in git)
 ```
 
-## 📝 Note
-The `checkpoints/`, `logs/`, and `results/` directories are not included in the git repository. They will be created automatically when you run the setup script or when the respective modules are executed.
-
-## 🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+## Notes
+- This is an internal development repository
+- Access is restricted to authorized team members only
+- The `checkpoints/`, `logs/`, and `results/` directories are not included in the repository
